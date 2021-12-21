@@ -104,7 +104,13 @@ function quit(){
  "exit => end the application",
  "help => get all commands ",
  "hello => return hello!",
- "hello+'name' => return hello name!"]
+ "hello+'name' => return hello name!",
+ "list => list all tasks",
+ "add x => add a task x to list",
+ "remove => remove the last task",
+ "remove 1 => remove the first task",
+ "remove 2 => remove the second task"]
+  
    function help(){
      console.log("show all commands \n")
     l.forEach(i => console.log(i + "\n"));
