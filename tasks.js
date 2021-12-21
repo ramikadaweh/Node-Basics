@@ -43,6 +43,9 @@ function onDataReceived(text) {
   else if(text ==='help\n'){
     help();
   }
+  else if(text ==='list\n'){
+    list();
+  }
   else{
     unknownCommand(text);
   }
@@ -94,6 +97,19 @@ function quit(){
      console.log("show all commands \n")
     l.forEach(i => console.log(i + "\n"));
    }
+
+   //list function 
+
+   function list() {
+    tasks = ["add","remove","delete"];
+    console.log("list of tasks :");
+    tasks.map((value) => {
+  
+      console.log(`${tasks.indexOf(value)+1} - ${value}`);
+  
+    });
+  
+  }
 
 // The following line starts the application
 startApp("rami kadaweh")
