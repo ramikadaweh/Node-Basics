@@ -87,7 +87,9 @@ function quit(){
  var l=["name => change application name",
  "quit => end the application",
  "exit => end the application",
- "help => get all commands "]
+ "help => get all commands ",
+ "hello => return hello!",
+ "hello+'name' => return hello name!"]
    function help(){
      console.log("show all commands \n")
     l.forEach(i => console.log(i + "\n"));
