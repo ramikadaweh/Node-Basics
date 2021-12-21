@@ -46,6 +46,9 @@ function onDataReceived(text) {
   else if(text ==='list\n'){
     list();
   }
+  else if(text.startsWith('add')){
+    add(text);
+  }
   else{
     unknownCommand(text);
   }
@@ -99,9 +102,9 @@ function quit(){
    }
 
    //list function 
-
-   function list() {
-    tasks = ["add","remove","delete"];
+   tasks = ["add","remove","delete"];
+  function list() {
+   
     console.log("list of tasks :");
     tasks.map((value) => {
   
@@ -109,6 +112,12 @@ function quit(){
   
     });
   
+  }
+
+  //add function
+  function add(task){
+    task == "add\n" ? console.log('error'):tasks.push(task.substring(4));
+
   }
 
 // The following line starts the application
