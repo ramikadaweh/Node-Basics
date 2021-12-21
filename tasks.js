@@ -49,6 +49,15 @@ function onDataReceived(text) {
   else if(text.startsWith('add')){
     add(text);
   }
+  else if(text ==='remove\n'){
+    remove();
+  }
+  else if(text ==='remove 1\n'){
+    removeFirst();
+  }
+  else if(text ==='remove 2\n'){
+    removeSecond();
+  }
   else{
     unknownCommand(text);
   }
@@ -118,6 +127,19 @@ function quit(){
   function add(task){
     task == "add\n" ? console.log('error'):tasks.push(task.substring(4));
 
+  }
+
+  //remove last task 
+  function remove(){
+    tasks.pop();
+  }
+  //remove first task
+  function removeFirst(){
+    tasks.shift()
+  }
+  //remove second task
+  function removeSecond(){
+    tasks.splice(1,1)
   }
 
 // The following line starts the application
