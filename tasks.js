@@ -89,6 +89,7 @@ function quit(){
  "exit => end the application",
  "help => get all commands "]
    function help(){
+     console.log("show all commands \n")
     l.forEach(i => console.log(i + "\n"));
    }
 
