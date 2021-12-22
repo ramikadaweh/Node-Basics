@@ -61,6 +61,12 @@ function onDataReceived(text) {
   else if(text.startsWith('edit')){
     edit(text);
   }
+  else if(text.startsWith('check')){
+    check(text);
+  }
+  else if(text === 'uncheck\n'){
+    uncheck(text);
+  }
   else if(text ==='object\n'){
     showObject();
   }
@@ -124,7 +130,7 @@ function quit(){
    }
 
    //list function 
-   tasks = [milk={done:'true'},water={done:'false'},tea={done:'true'}];
+   tasks = [milk={done:'false'},water={done:'false'},tea={done:'true'}];
   function list() {
    
     console.log("list of tasks :");
@@ -196,6 +202,25 @@ function quit(){
    }
    console.log('tasks: %O',tasks);
   } 
+
+
+  function check(text){
+    if (text == 'check\n'){
+      console.log("error")
+    }
+    if (text == 'check 1\n'){
+       tasks[0]["done"]="true"
+    }
+  }
+  function uncheck(text){
+   for(i=0 ;i<tasks.length;i++){
+    if(tasks[i]["done"]=="true"){
+      tasks[i]["done"]="false"
+    }
+    
+  }
+    
+  }
    
 
 
