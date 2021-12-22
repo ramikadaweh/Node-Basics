@@ -61,6 +61,9 @@ function onDataReceived(text) {
   else if(text.startsWith('edit')){
     edit(text);
   }
+  else if(text ==='object\n'){
+    showObject();
+  }
   
   else{
     unknownCommand(text);
@@ -121,7 +124,7 @@ function quit(){
    }
 
    //list function 
-   tasks = ["add","remove","delete"];
+   tasks = [milk={done:'true'},water={done:'false'},tea={done:'true'}];
   function list() {
    
     console.log("list of tasks :");
@@ -177,6 +180,24 @@ function quit(){
       tasks[tasks.length-1]= myarr[1]
     }
   }
+
+
+
+  function showObject(){
+    
+    
+   for(i=0;i<tasks.length;i++){
+     if(tasks[i]["done"]=="true"){
+       tasks[i].done="[✓]"
+     }
+     else{
+      tasks[i].done="[]"
+     }
+   }
+   console.log('tasks: %O',tasks);
+  } 
+   
+
 
   
 
