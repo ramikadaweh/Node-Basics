@@ -49,8 +49,8 @@ function onDataReceived(text) {
   else if(text.startsWith('add')){
     add(text);
   }
-  else if(text ==='remove\n'){
-    remove();
+  else if(text.startsWith('remove')){
+    remove(text);
   }
   else if(text ==='remove 1\n'){
     removeFirst();
@@ -58,6 +58,7 @@ function onDataReceived(text) {
   else if(text ==='remove 2\n'){
     removeSecond();
   }
+  
   else{
     unknownCommand(text);
   }
@@ -136,8 +137,18 @@ function quit(){
   }
 
   //remove last task 
-  function remove(){
-    tasks.pop();
+  function remove(text){
+    myarr=text.split(" ");
+    let index = myarr[1]-1;
+    if (index < tasks.length) {
+      tasks.splice((index), 1);
+    }
+    else{
+      console.log("error")
+    }
+    
+    
+
   }
   //remove first task
   function removeFirst(){
@@ -147,6 +158,8 @@ function quit(){
   function removeSecond(){
     tasks.splice(1,1)
   }
+
+  
 
 // The following line starts the application
 startApp("rami kadaweh")
