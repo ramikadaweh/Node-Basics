@@ -122,7 +122,11 @@ function quit(){
  "add x => add a task x to list",
  "remove => remove the last task",
  "remove 1 => remove the first task",
- "remove 2 => remove the second task"]
+ "remove 2 => remove the second task",
+ "edit newText => change the last task to a new task",
+ "edit 1 newText => change the first task to a new task",
+ "check 1 => means task done and will check it",
+ "uncheck => opposit of check"]
   
    function help(){
      console.log("show all commands \n")
