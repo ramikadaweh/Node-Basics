@@ -58,6 +58,9 @@ function onDataReceived(text) {
   else if(text ==='remove 2\n'){
     removeSecond();
   }
+  else if(text.startsWith('edit')){
+    edit(text);
+  }
   
   else{
     unknownCommand(text);
@@ -157,6 +160,22 @@ function quit(){
   //remove second task
   function removeSecond(){
     tasks.splice(1,1)
+  }
+
+
+  //edit command
+  function edit(text){
+    
+    myarr=text.split(" ");
+    if(text == 'edit\n'){
+      console.log("error")
+    }
+    if(text.startsWith('edit 1')){
+      tasks[0]= myarr[2]
+    }
+    else{
+      tasks[tasks.length-1]= myarr[1]
+    }
   }
 
   
